@@ -717,7 +717,7 @@ footer{
     transform:translateY(0);
 }
 
-/* ================= FIXED MOBILE RESPONSIVENESS ================= */
+/* ================= MOBILE VIEW FIX (SPACE BETWEEN PHOTO & BUTTON) ================= */
 
 @media(max-width: 992px){
     .hero{
@@ -731,8 +731,8 @@ footer{
     }
 
     .hero-image{
-        order: -1;
-        margin-bottom: 15px;
+        order: -1; /* Photo ra Hire Me button lai mathi nai rakhxa */
+        margin-bottom: 25px; /* Photo ra tala ko content beech ma gap badhaeko */
     }
 
     .hero-image img{
@@ -740,23 +740,7 @@ footer{
         height: 260px;
     }
 
-    .hero-buttons{
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-top: 25px;
-    }
-
-    .contact-box{
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content{
-        flex-direction: column;
-    }
-}
-
-@media(max-width: 768px){
+    /* Navbar ra Nav-links lai thik line ma rakhna */
     .navbar{
         padding: 15px 5%;
         flex-direction: column;
@@ -769,33 +753,19 @@ footer{
         gap: 15px;
     }
 
-    .hero h1{
-        font-size: 38px;
+    .contact-box{
+        grid-template-columns: 1fr;
     }
 
-    .section-title{
-        font-size: 30px;
+    .footer-content{
+        flex-direction: column;
     }
 }
 
 @media(max-width: 480px){
-    .hero{
-        padding-top: 180px;
-    }
-
-    .hero h1{
-        font-size: 30px;
-    }
-
     .hero-image img{
         width: 200px;
         height: 200px;
     }
-
-    .btn-primary,
-    .btn-secondary,
-    .btn-nav{
-        width: 100%;
-        text-align: center;
-    }
 }
+
