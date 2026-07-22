@@ -717,7 +717,7 @@ footer{
     transform:translateY(0);
 }
 
-/* ================= FIXED MOBILE RESPONSIVENESS (BUTTON ABOVE PHOTO) ================= */
+/* ================= FIXED MOBILE RESPONSIVENESS ================= */
 
 @media(max-width: 992px){
     .hero{
@@ -726,33 +726,76 @@ footer{
     }
 
     .hero-content{
-        display: flex; /* Flexbox use garne */
-        flex-direction: column; /* Sabai kura euta line ma tala-mathi */
+        grid-template-columns: 1fr;
         gap: 40px;
     }
 
     .hero-image{
-        order: 2; /* Photo lai tala rakheko (order 2) */
-        margin-bottom: 0;
+        order: -1;
+        margin-bottom: 15px;
     }
 
-    .hero-text-container { /* Tapai ko text ra button vako wrapper (yo name check garnu hola html ma) */
-         order: 1; /* Text ra Button lai photo vanda mathi rakheko (order 1) */
+    .hero-image img{
+        width: 260px;
+        height: 260px;
     }
 
     .hero-buttons{
         justify-content: center;
         flex-wrap: wrap;
         gap: 15px;
-        margin-top: 20px; /* Button mathi space */
-        order: 1; /* Button lai text vitra ni mathi rakhne vaye order use garna sakxa */
+        margin-top: 25px;
     }
 
-    /* Baki sabai section haru ko fix */
-    .contact-box, .footer-content {
+    .contact-box{
         grid-template-columns: 1fr;
+    }
+
+    .footer-content{
         flex-direction: column;
     }
 }
 
-/* Tablet ra Desktop ko lagi styles yaha thapne... */
+@media(max-width: 768px){
+    .navbar{
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1{
+        font-size: 38px;
+    }
+
+    .section-title{
+        font-size: 30px;
+    }
+}
+
+@media(max-width: 480px){
+    .hero{
+        padding-top: 180px;
+    }
+
+    .hero h1{
+        font-size: 30px;
+    }
+
+    .hero-image img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-nav{
+        width: 100%;
+        text-align: center;
+    }
+}
