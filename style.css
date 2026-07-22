@@ -717,7 +717,7 @@ footer{
     transform:translateY(0);
 }
 
-/* ================= MOBILE VIEW FIX (SPACE BETWEEN PHOTO & BUTTON) ================= */
+/* ================= FIXED MOBILE RESPONSIVENESS (BUTTON ABOVE PHOTO) ================= */
 
 @media(max-width: 992px){
     .hero{
@@ -725,14 +725,30 @@ footer{
         text-align: center;
     }
 
+    /* Hero Content lai Flexbox column ma set garne */
     .hero-content{
-        grid-template-columns: 1fr;
-        gap: 40px;
+        display: flex;
+        flex-direction: column; /* Sabai kura euta line ma tala-mathi */
+        gap: 15px; /* Button ra photo beech ko gap */
     }
 
+    /* Tapai ko text section lai mathi laane */
+    .hero-text { /* Yadi yo class chaina vane, tapai ko text wrapper check garnu hola */
+        order: 1; /* Text ra Button mathi */
+    }
+
+    /* "Hire Me" button container lai text vitra mathi rakhne */
+    .hero-buttons{
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 25px; /* Button ra photo beech ma extra gap */
+        order: 1; /* Button lai text vitra ni mathi rakhne vaye order use garna sakxa */
+    }
+    
+    /* Tapai ko photo section lai tala laane */
     .hero-image{
-        order: -1; /* Photo ra Hire Me button lai mathi nai rakhxa */
-        margin-bottom: 25px; /* Photo ra tala ko content beech ma gap badhaeko */
+        order: 2; /* Photo tala */
+        margin-bottom: 0;
     }
 
     .hero-image img{
@@ -768,4 +784,3 @@ footer{
         height: 200px;
     }
 }
-
