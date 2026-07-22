@@ -717,7 +717,7 @@ footer{
     transform:translateY(0);
 }
 
-/* ================= PERFECT MOBILE & DESKTOP RESPONSIVENESS ================= */
+/* ================= MOBILE HERO FIX ================= */
 
 @media(max-width: 992px){
     .hero{
@@ -729,75 +729,30 @@ footer{
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 25px;
     }
 
-    /* 1. Photo (Circle) lai sabai bhanda mathi rakhne */
-    .hero-image{
-        order: 1; 
-        margin-bottom: 0;
-    }
-
-    .hero-image img{
-        width: 240px;
-        height: 240px;
-    }
-
-    /* 2. Text ra Name ("Rohan Shrestha") lai photo ko thekkai tala rakhne */
+    /* 1. "Hire Me" button ra text lai mathi rakhne */
     .hero-text, 
     .hero-content > div:not(.hero-image) { 
-        order: 2; 
+        order: 1; 
     }
 
-    .hero h1{
-        font-size: 36px;
-        margin: 10px 0;
-    }
-
-    /* 3. Buttons haru lai sabai bhanda tala rakhne */
     .hero-buttons{
-        order: 3;
         justify-content: center;
         flex-wrap: wrap;
         gap: 15px;
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
-    .navbar{
-        padding: 15px 5%;
-        flex-direction: column;
-        gap: 15px;
+    /* 2. Photo (Circle) lai button vanda tala, ekdam safa dekhine gari rakhne */
+    .hero-image{
+        order: 2; 
+        margin-top: 15px; /* Button ra photo beech ma gap dina */
     }
 
-    .nav-links{
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .contact-box{
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content{
-        flex-direction: column;
-    }
-}
-
-@media(max-width: 480px){
     .hero-image img{
-        width: 190px;
-        height: 190px;
-    }
-
-    .hero h1{
-        font-size: 30px;
-    }
-
-    .btn-primary,
-    .btn-secondary,
-    .btn-nav{
-        width: 100%;
-        text-align: center;
+        width: 230px;
+        height: 230px;
     }
 }
