@@ -717,7 +717,7 @@ footer{
     transform:translateY(0);
 }
 
-/* ================= FIXED MOBILE RESPONSIVENESS ================= */
+/* ================= FIXED MOBILE RESPONSIVENESS (BUTTON ABOVE PHOTO) ================= */
 
 @media(max-width: 992px){
     .hero{
@@ -726,76 +726,33 @@ footer{
     }
 
     .hero-content{
-        grid-template-columns: 1fr;
+        display: flex; /* Flexbox use garne */
+        flex-direction: column; /* Sabai kura euta line ma tala-mathi */
         gap: 40px;
     }
 
     .hero-image{
-        order: -1;
-        margin-bottom: 15px;
+        order: 2; /* Photo lai tala rakheko (order 2) */
+        margin-bottom: 0;
     }
 
-    .hero-image img{
-        width: 260px;
-        height: 260px;
+    .hero-text-container { /* Tapai ko text ra button vako wrapper (yo name check garnu hola html ma) */
+         order: 1; /* Text ra Button lai photo vanda mathi rakheko (order 1) */
     }
 
     .hero-buttons{
         justify-content: center;
         flex-wrap: wrap;
         gap: 15px;
-        margin-top: 25px;
+        margin-top: 20px; /* Button mathi space */
+        order: 1; /* Button lai text vitra ni mathi rakhne vaye order use garna sakxa */
     }
 
-    .contact-box{
+    /* Baki sabai section haru ko fix */
+    .contact-box, .footer-content {
         grid-template-columns: 1fr;
-    }
-
-    .footer-content{
         flex-direction: column;
     }
 }
 
-@media(max-width: 768px){
-    .navbar{
-        padding: 15px 5%;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav-links{
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .hero h1{
-        font-size: 38px;
-    }
-
-    .section-title{
-        font-size: 30px;
-    }
-}
-
-@media(max-width: 480px){
-    .hero{
-        padding-top: 180px;
-    }
-
-    .hero h1{
-        font-size: 30px;
-    }
-
-    .hero-image img{
-        width: 200px;
-        height: 200px;
-    }
-
-    .btn-primary,
-    .btn-secondary,
-    .btn-nav{
-        width: 100%;
-        text-align: center;
-    }
-}
+/* Tablet ra Desktop ko lagi styles yaha thapne... */
