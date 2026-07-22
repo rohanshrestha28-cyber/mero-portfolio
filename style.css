@@ -705,111 +705,97 @@ footer{
 
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:992px){
-
-.hero-content{
-    grid-template-columns:1fr;
-    text-align:center;
-}
-
-.hero-image{
-    order:-1;
-}
-
-.contact-box{
-    grid-template-columns:1fr;
-}
-
-.footer-content{
-    flex-direction:column;
-}
-
-}
-
-@media(max-width:768px){
-
-.navbar{
-    flex-direction:column;
-    gap:20px;
-}
-
-.nav-links{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
-}
-
-.hero h1{
-    font-size:42px;
-}
-
-.hero-image img{
-    width:250px;
-    height:250px;
-}
-
-.section-title{
-    font-size:30px;
-}
-
-.hero-buttons{
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-}
-
-@media(max-width:480px){
-
-.hero{
-    padding-top:140px;
-}
-
-.hero h1{
-    font-size:34px;
-}
-
-.hero-image img{
-    width:200px;
-    height:200px;
-}
-
-.btn-primary,
-.btn-secondary,
-.btn-nav{
-    width:100%;
-    text-align:center;
-}
-
-}
-
 /* Scroll Animation */
-
 .hidden{
-
-opacity:0;
-
-transform:translateY(50px);
-
-transition:1s;
-
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
 }
 
 .show{
-
-opacity:1;
-
-transform:translateY(0);
-
+    opacity:1;
+    transform:translateY(0);
 }
 
+/* ================= FIXED MOBILE RESPONSIVENESS ================= */
 
-/* Mobile devices ko lagi responsive design */
-@media (max-width: 768px) {
-  body {
-    padding: 10px;
-    /* Yaha aafno content ko width ya alignment milauna saknu huncha */
-  }
+@media(max-width: 992px){
+    .hero{
+        padding: 160px 5% 80px 5%;
+        text-align: center;
+    }
+
+    .hero-content{
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-image{
+        order: -1;
+        margin-bottom: 15px;
+    }
+
+    .hero-image img{
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero-buttons{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    .contact-box{
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content{
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 768px){
+    .navbar{
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1{
+        font-size: 38px;
+    }
+
+    .section-title{
+        font-size: 30px;
+    }
+}
+
+@media(max-width: 480px){
+    .hero{
+        padding-top: 180px;
+    }
+
+    .hero h1{
+        font-size: 30px;
+    }
+
+    .hero-image img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-nav{
+        width: 100%;
+        text-align: center;
+    }
 }
