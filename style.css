@@ -717,56 +717,34 @@ footer{
     transform:translateY(0);
 }
 
-/* ================= FINAL ORDER FIX FOR MOBILE ================= */
+/* ================= FIXED MOBILE RESPONSIVENESS ================= */
 
 @media(max-width: 992px){
     .hero{
-        padding: 140px 5% 60px 5%;
+        padding: 160px 5% 80px 5%;
         text-align: center;
     }
 
     .hero-content{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
-    .navbar{
-        padding: 15px 5%;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav-links{
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    /* 1. Hire Me button ra top section sabai bhanda mathi */
-    .hero-buttons{
-        order: 1;
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-
-    /* 2. Photo (Circle) button vanda thikkai tala */
     .hero-image{
-        order: 2;
-        margin-top: 10px;
+        order: -1;
         margin-bottom: 15px;
     }
 
     .hero-image img{
-        width: 230px;
-        height: 230px;
+        width: 260px;
+        height: 260px;
     }
 
-    /* 3. Hello, I'm Rohan Shrestha ra baki text photo vanda tala */
-    .hero-text, 
-    .hero-content > div:not(.hero-image):not(.hero-buttons) {
-        order: 3;
+    .hero-buttons{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 25px;
     }
 
     .contact-box{
@@ -778,9 +756,46 @@ footer{
     }
 }
 
+@media(max-width: 768px){
+    .navbar{
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1{
+        font-size: 38px;
+    }
+
+    .section-title{
+        font-size: 30px;
+    }
+}
+
 @media(max-width: 480px){
+    .hero{
+        padding-top: 180px;
+    }
+
+    .hero h1{
+        font-size: 30px;
+    }
+
     .hero-image img{
-        width: 190px;
-        height: 190px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-nav{
+        width: 100%;
+        text-align: center;
     }
 }
