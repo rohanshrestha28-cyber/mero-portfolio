@@ -717,30 +717,22 @@ footer{
     transform:translateY(0);
 }
 
-/* ================= MOBILE VIEW FIX (SPACE BETWEEN PHOTO & BUTTON) ================= */
+/* ================= EXACT MOBILE HERO FIX ================= */
 
 @media(max-width: 992px){
     .hero{
-        padding: 160px 5% 80px 5%;
+        padding: 140px 5% 60px 5%;
         text-align: center;
     }
 
     .hero-content{
-        grid-template-columns: 1fr;
-        gap: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 
-    .hero-image{
-        order: -1; /* Photo ra Hire Me button lai mathi nai rakhxa */
-        margin-bottom: 25px; /* Photo ra tala ko content beech ma gap badhaeko */
-    }
-
-    .hero-image img{
-        width: 260px;
-        height: 260px;
-    }
-
-    /* Navbar ra Nav-links lai thik line ma rakhna */
+    /* 1. Navbar ra links lai milaune */
     .navbar{
         padding: 15px 5%;
         flex-direction: column;
@@ -750,7 +742,24 @@ footer{
     .nav-links{
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 12px;
+    }
+
+    /* 2. Hire Me button ra Nav/Header sections lai mathi rakhne */
+    .hero-content > div:not(.hero-image) {
+        order: 1;
+    }
+
+    /* 3. Photo (Circle) lai "Hire Me" button vanda tala, ekdam gap rakhera pura dekhine gari rakhne */
+    .hero-image{
+        order: 2;
+        margin-top: 25px; /* Button ra photo beech ma gap (taki face chop nahos) */
+        margin-bottom: 20px;
+    }
+
+    .hero-image img{
+        width: 240px;
+        height: 240px;
     }
 
     .contact-box{
