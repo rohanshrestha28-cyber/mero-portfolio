@@ -717,46 +717,52 @@ footer{
     transform:translateY(0);
 }
 
-/* ================= FIXED MOBILE RESPONSIVENESS (BUTTON ABOVE PHOTO) ================= */
+/* ================= PERFECT MOBILE & DESKTOP RESPONSIVENESS ================= */
 
 @media(max-width: 992px){
     .hero{
-        padding: 160px 5% 80px 5%;
+        padding: 140px 5% 60px 5%;
         text-align: center;
     }
 
-    /* Hero Content lai Flexbox column ma set garne */
     .hero-content{
         display: flex;
-        flex-direction: column; /* Sabai kura euta line ma tala-mathi */
-        gap: 15px; /* Button ra photo beech ko gap */
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
     }
 
-    /* Tapai ko text section lai mathi laane */
-    .hero-text { /* Yadi yo class chaina vane, tapai ko text wrapper check garnu hola */
-        order: 1; /* Text ra Button mathi */
-    }
-
-    /* "Hire Me" button container lai text vitra mathi rakhne */
-    .hero-buttons{
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 25px; /* Button ra photo beech ma extra gap */
-        order: 1; /* Button lai text vitra ni mathi rakhne vaye order use garna sakxa */
-    }
-    
-    /* Tapai ko photo section lai tala laane */
+    /* 1. Photo (Circle) lai sabai bhanda mathi rakhne */
     .hero-image{
-        order: 2; /* Photo tala */
+        order: 1; 
         margin-bottom: 0;
     }
 
     .hero-image img{
-        width: 260px;
-        height: 260px;
+        width: 240px;
+        height: 240px;
     }
 
-    /* Navbar ra Nav-links lai thik line ma rakhna */
+    /* 2. Text ra Name ("Rohan Shrestha") lai photo ko thekkai tala rakhne */
+    .hero-text, 
+    .hero-content > div:not(.hero-image) { 
+        order: 2; 
+    }
+
+    .hero h1{
+        font-size: 36px;
+        margin: 10px 0;
+    }
+
+    /* 3. Buttons haru lai sabai bhanda tala rakhne */
+    .hero-buttons{
+        order: 3;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
     .navbar{
         padding: 15px 5%;
         flex-direction: column;
@@ -780,7 +786,18 @@ footer{
 
 @media(max-width: 480px){
     .hero-image img{
-        width: 200px;
-        height: 200px;
+        width: 190px;
+        height: 190px;
+    }
+
+    .hero h1{
+        font-size: 30px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-nav{
+        width: 100%;
+        text-align: center;
     }
 }
